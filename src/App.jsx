@@ -11,10 +11,6 @@ import Checkout from "./routes/checkout";
 import { CartProvider } from "./components/cartContext.jsx";
 import { LoginProvider } from "./components/loginContext";
 
-
-
-// ["Catalogo", "Cotizador", "Contacto", "Acerca de", "Log In"];
-
 function App() {
     return (
     <CartProvider>
