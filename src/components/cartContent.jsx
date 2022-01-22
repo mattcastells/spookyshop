@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from "./cartContext.jsx";
 import { Link } from 'react-router-dom';
+import "./cartContent.sass";
 
 const CartContent = ({enableEdit}) => {
     const cartContext = useContext(CartContext);
@@ -15,10 +16,10 @@ const CartContent = ({enableEdit}) => {
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Total Parcial</th>
+                        <th className="content-text">Producto</th>
+                        <th className="content-text">Precio</th>
+                        <th className="content-text">Cantidad</th>
+                        <th className="content-text">Total Parcial</th>
                         {enableEdit?<th></th>: <></>}
                     </tr>
                     
@@ -26,11 +27,11 @@ const CartContent = ({enableEdit}) => {
                 <tbody>
                     {cartContext.cart.map(itemQuantity =>(
                     <tr>
-                        <td><img alt={itemQuantity.item.title} style={{width: "100px", height:"100px"}} src={itemQuantity.item.thumbnail}></img></td>
-                        <td>{itemQuantity.item.title}</td>
-                        <td>${itemQuantity.item.price}</td>
-                        <td>{itemQuantity.quantity}</td>
-                        <td>${itemQuantity.quantity * itemQuantity.item.price}</td>
+                        <td><img className="item-img" alt={itemQuantity.item.title} style={{width: "100px", height:"100px"}} src={itemQuantity.item.thumbnail}></img></td>
+                        <td className="content-item">{itemQuantity.item.title}</td>
+                        <td className="content-item">${itemQuantity.item.price}</td>
+                        <td className="content-item">{itemQuantity.quantity}</td>
+                        <td className="content-item">${itemQuantity.quantity * itemQuantity.item.price}</td>
                         {enableEdit?<td>
                             <button className="btn btn-danger mx-1" onClick={()=>removeItem(itemQuantity.item.id)}>X</button>
                             <Link className="btn btn-success mx-1" to={"/item/"+itemQuantity.item.id}>Editar</Link>
@@ -40,7 +41,7 @@ const CartContent = ({enableEdit}) => {
                     ))}
                 </tbody>
             </table>
-        <p>Total: ${cartContext.getTotalPrice()}</p>
+        <p  className="content-text">Total: ${cartContext.getTotalPrice()}</p>
         </>
     )
 }
