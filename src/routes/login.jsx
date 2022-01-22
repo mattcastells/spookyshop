@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { LoginContext } from "../components/loginContext";
 import { getAuth,getFirebase } from "../firebaseInit";
 import "./login.sass"
+
 const Login = () => {
     const loginContext = useContext(LoginContext);
 
@@ -22,12 +23,12 @@ const Login = () => {
                 history.push(`/`);
             })
             .catch((error) => {
-                // Handle Errors here.
+                // Se encarga de los errores.
                 var errorCode = error.code;
                 var errorMessage = error.message;
-                // The email of the user's account used.
+                // El mail que intento usar el usuario esta en uso.
                 var email = error.email;
-                // The firebase.auth.AuthCredential type that was used.
+                // El tipo de firebase.auth.AuthCredential esta en uso.
                 var credential = error.credential;
                 // ...
             });
@@ -42,10 +43,10 @@ const Login = () => {
 
     function renderNotLoggedIn(){
         return <>
-            <h1 >Log in</h1>
+            <h1 className="log-in">Log in</h1>
             <div class="col-md-12"> 
                 <button className="btn btn-lg btn-google btn-block text-uppercase btn-outline" onClick={googleLoginPopUp}>
-                    <img src="https://img.icons8.com/color/16/000000/google-logo.png"/> Ingresar usando Google
+                    <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="google-logo"/> Ingresar usando Google
                 </button> 
             </div>
         </>
