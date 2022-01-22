@@ -23,21 +23,3 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max)+1;
 }
 
-// item = {
-//     category:1,
-//     description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae libero tempus, dapibus lacus nec, posuere orci. Praesent egestas, turpis sit amet rhoncus convallis, ante arcu maximus libero, sed aliquam justo erat quis ante. Proin suscipit pellentesque nisl. Vestibulum non commodo tortor. Vivamus scelerisque cursus ex, sit amet scelerisque nibh laoreet iaculis. Nunc mi lectus, commodo eget hendrerit ac, fringilla in tortor. Nullam non suscipit risus. Praesent pharetra efficitur pretium. In a nibh pretium, pretium leo in, luctus lorem. Maecenas fermentum in magna eget euismod. Nulla efficitur dapibus eros, id pulvinar massa porttitor ac. Duis iaculis porta odio, ut lobortis mi vehicula et.",
-//     price: 10000,
-//     stock: 10,
-//     thumbnail: "images/template256x256.png",
-//     title:""
-// }
-
-// titles = ['Remeras','Pantalones','Combo']
-// counts = [0,0,0]
-// for (let i = 0; i < 20; i++) {
-//     category = getRandomInt(3);
-//     counts[category - 1] += 1;
-//     item.category = category;
-//     item.title = `${titles[category-1]} ${counts[category - 1]}`;
-//     items.add(item)
-// }
