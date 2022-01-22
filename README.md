@@ -1,3 +1,7 @@
+# Proyecto final de Coderhouse para el curso de React
+
+El proyecto consiste en un "e-commerce" de fantasia, pensado como un negocio de venta de articulos para zombis y entes que retornan del mas alla. La decision de encararlo de esta manera fue por motivos de entretenimiento y para hacer algo mas original a lo que se suele ver en este tipo de practicas.
+
 # E-Commerce example - ReactJS
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
