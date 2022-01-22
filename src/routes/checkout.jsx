@@ -6,6 +6,7 @@ import {getFirestore} from "../firebaseInit"
 import firebase from "firebase/app";
 import 'firebase/firestore';
 import { LoginContext } from '../components/loginContext';
+import "./checkout.sass"
 
 
 const empty_user = {
@@ -121,14 +122,14 @@ const Checkout = () => {
         }
         if(checkoutDone){
             return  <div className="container mt-4 text-center">
-                <h1>Tu orden fue creada</h1>
-                <h2>El ID de tu orden es: {orderId}</h2>
+                <h1 className="buying-text">Tu orden fue creada</h1>
+                <h2 className="buying-text">El ID de tu orden es: {orderId}</h2>
                 <Link className="btn btn-success" to="/">Ir al catalogo</Link>
             </div>
         }
         if(loading){
             return  <div className="container mt-4 text-center">
-                <h2>Realizando compra...</h2>
+                <h2 className="buying-text">Realizando compra...</h2>
             </div>
         }
         else{
