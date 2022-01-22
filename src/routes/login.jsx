@@ -6,7 +6,6 @@ import "./login.sass"
 const Login = () => {
     const loginContext = useContext(LoginContext);
 
-    // To redirect after sign in
     const history = useHistory();
 
     const googleLoginPopUp = () =>{
@@ -16,9 +15,7 @@ const Login = () => {
             .then((result) => {
                 /** @type {firebase.auth.OAuthCredential} */
                 var credential = result.credential;
-                // This gives you a Google Access Token. You can use it to access the Google API.
                 var token = credential.accessToken;
-                // The signed-in user info.
                 var user = result.user;
                 loginContext.setUser(user);
                 loginContext.setCredential(credential);
@@ -38,7 +35,7 @@ const Login = () => {
 
     function renderLoggedIn(){
         return <>
-        <h1>Logged as:</h1>
+        <h1>Logead@ como:</h1>
         <h2>{loginContext.user.displayName}</h2>
         </>
     }
@@ -48,7 +45,7 @@ const Login = () => {
             <h1 >Log in</h1>
             <div class="col-md-12"> 
                 <button className="btn btn-lg btn-google btn-block text-uppercase btn-outline" onClick={googleLoginPopUp}>
-                    <img src="https://img.icons8.com/color/16/000000/google-logo.png"/> Signup Using Google
+                    <img src="https://img.icons8.com/color/16/000000/google-logo.png"/> Ingresar usando Google
                 </button> 
             </div>
         </>
