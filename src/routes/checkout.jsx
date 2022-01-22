@@ -115,20 +115,20 @@ const Checkout = () => {
     function renderItems(){
         if(error != null){
             return <div className="container mt-4 text-center">
-                <h1>An error ocurred during the purchase</h1>
-                <Link className="btn btn-danger" to="/">Go to Catalog</Link>
+                <h1>Ocurrio un error durante la compra</h1>
+                <Link className="btn btn-danger" to="/">Ir al catalogo</Link>
             </div>
         }
         if(checkoutDone){
             return  <div className="container mt-4 text-center">
-                <h1>Success! You order has been created</h1>
-                <h2>You order ID is: {orderId}</h2>
-                <Link className="btn btn-success" to="/">Go to Catalog</Link>
+                <h1>Tu orden fue creada</h1>
+                <h2>El ID de tu orden es: {orderId}</h2>
+                <Link className="btn btn-success" to="/">Ir al catalogo</Link>
             </div>
         }
         if(loading){
             return  <div className="container mt-4 text-center">
-                <h2>Completing Purchase...</h2>
+                <h2>Realizando compra...</h2>
             </div>
         }
         else{
@@ -137,7 +137,7 @@ const Checkout = () => {
                 <div className="row">
                     <div className="form col">
                         <div className="mb-3">
-                            <label htmlFor="user-name" className="form-label">Name</label>
+                            <label htmlFor="user-name" className="form-label">Nombre</label>
                             <input type="text" className="form-control" id="user-name" onChange={evt => updateAttribute("name",evt)}/>
                         </div>
                         <div className="mb-3">
@@ -146,17 +146,17 @@ const Checkout = () => {
                             <div id="emailHelp" className="form-text">Nunca compartiremos tu mail con nadie.</div>
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="user-phone" className="form-label">Phone</label>
+                            <label htmlFor="user-phone" className="form-label">Telefono</label>
                             <input type="phone" className="form-control" id="user-phone" onChange={evt => updateAttribute("phone",evt)}/>
                         </div>
                         <div className="mb-3 form-check">
                             <input type="checkbox" className="form-check-input" id="user-newsletter" onChange={evt => updateAttribute("news",evt,true)}/>
-                            <label className="form-check-label" htmlFor="user-newsletter">Suscribe to Newsletter to get the best promotions and offers</label>
+                            <label className="form-check-label" htmlFor="user-newsletter">Suscribete al correo diario para enterarte de nuestras novedades y descuentos</label>
                         </div>
 
                         {loginContext.user ? renderBuyAsGoogle(): <></>}
                         <div className="row mx-2 mt-2">
-                            <button className="btn btn-primary mx-2 mt-2" onClick={createOrder}>Complete Purchase</button>
+                            <button className="btn btn-primary mx-2 mt-2" onClick={createOrder}>Completar compra</button>
                         </div>
                     </div>
                     <div className="col text-center">
@@ -170,8 +170,8 @@ const Checkout = () => {
     function renderNoItems(){
         return <>
         <div className="text-center">
-            <p className="mt-4">No items in cart</p>
-            <Link className="btn btn-success" to="/">Go to Catalog</Link>
+            <p className="mt-4">No hay items en el carrito</p>
+            <Link className="btn btn-success" to="/">Ir al catalogo</Link>
         </div>
         </>
     }

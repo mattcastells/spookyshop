@@ -46,7 +46,6 @@ function NavBar() {
         <nav className={"navbar navbar-expand-lg navbar-light bg-soft-yellow"}>
             <div className={"container-fluid"}>
                 <Link to="/" className={"navbar-brand"}>Spooky Shop!</Link>
-                <img src="../components/zombie.svg" alt="zombi" />
                 <NavBarToggler target={"navbarToggler"}/>
                 <div className={"collapse navbar-collapse"} id={"navbarToggler"}>
                     <ul className={"navbar-nav me-auto mb-2 mb-lg-0"}>

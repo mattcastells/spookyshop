@@ -15,11 +15,8 @@ const ItemDetail = ({item}) => {
         cartContext.addItem(item,cantidad);
     }
     
-    /**
-    * Conditional rendering of the ItemCount component or Link to end purshase depending on addedQuantity
-    **/
     const renderPurchase= ()=>{
-        if(addedQuantity==0){
+        if(addedQuantity===0){
             return <ItemCount stock={item.stock} initial={1} onAdd={onAdd}></ItemCount>
         }
         else{
